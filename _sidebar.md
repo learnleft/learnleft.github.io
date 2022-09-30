@@ -1,7 +1,8 @@
 <!-- docs/_sidebar.md -->
 
 * [前言](README.md)
-* 第一章Linux
+* [第O章相同的部分](/相同的部分/1)
+* **第一章Linux**
 	* [关闭BIOS中的TPM](/Linux/关闭BIOS中的TPM/)
 	* [如何选择linux系统？](/Linux/如何选择linux系统？/)
 	* [大杂烩](/Linux/大杂烩/)
