@@ -151,12 +151,14 @@ zfs create -o mountpoint=/var/cache/ccache ${ZPOOL}/data/ccache
 
 #### 挂载分区
 `mkdir -p ${MOUNT}/boot/efi`
+
 `mount /dev/sda4 ${MOUNT}/boot/efi`
 
 
 
 #### 复制zfs缓存
 `mkdir -p ${ZPOOL}/etc/zfs`
+
 `cp /etc/zfs/zpool.cache ${ZPOOL}/etc/zfs/zpool.cache`
 
 
@@ -167,7 +169,9 @@ zfs create -o mountpoint=/var/cache/ccache ${ZPOOL}/data/ccache
 
 #### 下载stage3到/mnt/gentoo下
 `cd ${MOUNT}`
+
 `wget ${STAGE3}`
+
 `tar xvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner`
 
 #### 挂载必要的其他文件系统
@@ -251,6 +255,7 @@ auto-sync = yes
 
 
 `rm -rf /var/db/repos/gentoo`
+
 `emerge --sync`
 
 #### 配置内核
@@ -279,11 +284,17 @@ echo 'sys-kernel/linux-firmware linux-fw-redistributable no-source-code' >/etc/p
 emerge -vj linux-firmware
 ~~~
 `emerge -av sys-kernel/genkernel sys-kernel/gentoo-sources`
+
 `eselect kernel list`
+
 `eselect kernel set 1`
+
 `eselect kernel list`（选中会有一个蓝色的星号在后面）
+
 `cd /usr/src/linux`
+
 `make localmodconfig` (这里遇到什么东西直接回车)
+
 `make menuconfig`
 
 ~~~
@@ -329,7 +340,9 @@ Linux Kernel Configuration
 
 
 `make -j8`  （有多少线程就给它多少不要吝啬）
+
 `make modules_install`
+
 `make install`
 
 
@@ -394,8 +407,11 @@ UUID="XXXX-XXXX"         /boot/efi   vfat  rw,noatime,errors=remount-ro 0 2
 
 #### 配置网络
 `emerge -av dhcpcd`
+
 `rc-update add dhcpcd default`
+
 `emerge --ask dev-qt/qtgui sys-apps/portage`
+
 `emerge --ask net-wireless/wpa_supplicant`
 
 
@@ -411,6 +427,7 @@ UUID="XXXX-XXXX"         /boot/efi   vfat  rw,noatime,errors=remount-ro 0 2
 
 #### 安装一些必要工具
 `emerge -av doas cronie eix zsh lsd gentoolkit dosfstools parted neofetch ntfs3g bpytop xorg-drivers xorg-server xinit xrandr libXinerama`
+
 `emerge --ask app-admin/sudo x11-wm/openbox`这个是桌面
 
 
@@ -494,7 +511,9 @@ reboot
 
 等刷屏完成
 `shell`
+
 `zpool import -f -d  /dev/sda5 -R /newroot zroot -N`
+
 `exit`
 
 ## 二.日常使用
@@ -539,11 +558,13 @@ WPA/WPA2/WPA3 认证的无线网络（如今常用的认证方式），执行如
 
 `nano /etc/resolv.conf`
 把`nameserver 114.114.114.114`照着排版打上去。
-`ping baidu.com`
+
+`ping bing.com`
 
 
 #### 设置ccache
 `nano /etc/portage/make.conf`
+
 `CCACHE_SIZE="10G"`
 
 >记得删除注释符号“#”
@@ -572,6 +593,7 @@ WPA/WPA2/WPA3 认证的无线网络（如今常用的认证方式），执行如
 `startx`你就可以看到鼠标和纯黑的面板
 
 `mkdir -p ~/.config/openbox/`
+
 `cp /etc/xdg/openbox/* ~/.config/openbox/`
 
 #### 设置hidpi
@@ -617,11 +639,13 @@ The following USE changes are necessary to proceed:
 #### 去掉USE的括号
 比如doas的persist的USE就是带括号的，那么就不能按之前的操作来，首先得去括号
 `vim /etc/portage/profile/package.use.mask`
+
 `app-admin/doas -persist`
 >persist前面的减号是用来去括号的（大概）
 
 之后就和以前一样
 `vim /etc/portage/portage.use/XXX`
+
 `app-admin/doas persist`
 
 
@@ -634,6 +658,7 @@ The following USE changes are necessary to proceed:
 
 #### 设置随着openbox的开启其他软件也随着启动
 `nano ~/.config/openbox/autostart`
+
 `tint2 &`
 
 #### 怎么知道openbox设置软件的名字会随着openbox的开启也跟着自启动呢？
@@ -652,8 +677,11 @@ firefox-bin &
 
 #### 电源和调节亮度
 `emerge -av mate-power-manager`
+
 `nano ~/.config/openbox/autostart`
+
 `mate-power-manager &`
+
 然后fn的调节亮度就能自动使用了。
 
 #### 迷雾通
@@ -823,6 +851,7 @@ revdep-rebuild
 
 #### 安装好qemu和libvirt后执行
 `rc-update add libvirtd default`
+
 `rc-service libvirtd start`
 
 

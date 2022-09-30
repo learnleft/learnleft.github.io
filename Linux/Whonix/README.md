@@ -24,14 +24,23 @@
 
 
 之后在终端中按顺序输入一下命令
+
 `sudo virsh -c qemu:///system net-define Whonix_external*.xml`
+
 `sudo virsh -c qemu:///system net-define Whonix_internal*.xml`
+
 `sudo virsh -c qemu:///system net-autostart Whonix-External`
+
 `sudo virsh -c qemu:///system net-start Whonix-External`
+
 `sudo virsh -c qemu:///system net-autostart Whonix-Internal`
+
 `sudo virsh -c qemu:///system net-start Whonix-Internal`
+
 `brctl show` 看有没有virbr0、virbr1、virbr2,如果没有，重复后面四个命令。
+
 `sudo virsh -c qemu:///system define Whonix-Gateway*.xml`
+
 `sudo virsh -c qemu:///system define Whonix-Workstation*.xml` 这两个命令是告诉kvm虚拟机你的镜像位置在哪，如果你在这之后又修改文件位置，那么不仅要用nano修改xml文件，还要再次输入这两个命令，虚拟机才知道你换了位置。
 
 

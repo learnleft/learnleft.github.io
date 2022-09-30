@@ -34,6 +34,7 @@ systemd我认为等价于党国
 这个移植性才是最重要的
 好比slackware,老而不死
 
-a:netbsd
-b:对
+>a:netbsd
+
+>b:对
 

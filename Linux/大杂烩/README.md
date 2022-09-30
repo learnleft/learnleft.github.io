@@ -101,6 +101,9 @@ wayland：先介绍xwayland是个兼容层，有些X11的软件在wayland下运�
 ## 用doas代替sudo[参考](https://sspai.com/post/64843)
 sudo的漏洞已经不用多说了
 如果出现这个：
+
 `doas: doas is not enabled, /etc/doas.conf: No such file or directory`
+
 `vim /etc/doas.conf`
+
 `permit johnsmith as root`（记得把johnsmith改为你的用户名）
