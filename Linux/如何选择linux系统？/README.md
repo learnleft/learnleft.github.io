@@ -14,7 +14,7 @@ opensuse 能做的都做了，做它的衍生发行版就没意思了
 > 如果我的能力可以的话
 我将以dwm的形态出击
 
-> 另一个自由派反驳他：i said icewm openbox jwm ,using window manager as normal windows but defeat gui.
+> 另一个自由派反驳他：i said icewm openbox jwm nscde ,using window manager as normal windows but defeat gui.
 
 所以自由派推荐[cachyos](https://cachyos.org)，chimera，void，alpine， gentoo某种意义上接近于lfs
 还有openbsd
