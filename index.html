@@ -38,8 +38,49 @@
 +     },
     }
 </script>
+ <style>
+    /* 以下是侧边栏(自定义) */
+    aside.sidebar ul li {
+      margin: 0;
+      position: relative;
+    }
  
+    aside.sidebar ul li ul {
+      margin: 6px 0;
+    }
+ 
+    aside.sidebar ul li p {
+      padding-left: 22px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+ 
+    aside.sidebar ul li a {
+      line-height: 25px;
+      font-size: 14px;    /* 导航栏字体大小 */
+      padding: 3px 0 3px 22px;
+    }
+ 
+    aside.sidebar ul li.active > a {
+      font-size: 16px !important;
+    }
+ 
+    aside.sidebar ul li.active > a:before {
+      content: '' !important;
+      position: absolute !important;
+      margin: 0 !important;
+      width: 10px !important;
+      height: 10px !important;
+      top: 15px !important;
+      left: 0px !important;
+      border-radius: 50% !important;
+      background-color: #fed24a !important;
+      box-shadow: 0 0 0 3px rgba(254, 210, 74, 0.4) !important;
+    }
+</style>
   <!-- 全局搜索 -->
 + <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<!-- 图片放大缩小支持 -->
 </body>
 </html>
