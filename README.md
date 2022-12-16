@@ -1,7 +1,11 @@
 # 阅读此指南需要注意几点
 警告：没有绝对的安全，匿名上网懂得越多，被抓的几率也越少，但也不能放松警惕。
 
-linux毒瘤和流量杀手：snap
+为什么安装flatpat要重启系统？只有windows安装卸载什么软件需要重启呀？  To complete setup, restart your system. Now all you have to do is install some apps!
+两个字：活该
+依赖flatpak和snap都是活该的表现
+appimage我不做评价
+
 
 我写的文章如果包含着来自https://anonymousplanet-ng.org/guide.html 的文章，都是经过我的修改和机翻加润色。
 
