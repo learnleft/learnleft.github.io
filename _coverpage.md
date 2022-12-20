@@ -2,7 +2,7 @@
 
 ![logo](image1.png)
 
-# 左派如何学会"匿名上网" <small></small>
+# 左派信息安全指南 <small></small>
 
 > 
 
